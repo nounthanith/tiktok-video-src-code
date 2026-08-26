@@ -3,7 +3,7 @@ import { ICategory } from "../types/category.type";
 
 const categorySchema = new Schema<ICategory>(
     {
-        name: { type: String, required: true, unique: true, trim: true },
+        name: { type: String, required: true, trim: true },
         image: { type: String, default: "" },
         description: { type: String, default: "None" }
     },

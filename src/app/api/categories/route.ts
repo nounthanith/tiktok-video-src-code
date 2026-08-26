@@ -16,18 +16,6 @@ export async function POST(req: NextRequest) {
         const data = await Category.create(body);
         return NextResponse.json(data, { status: 201 })
     } catch (error) {
-        if (
-            error &&
-            typeof error === "object" &&
-            "code" in error &&
-            error.code === 11000
-        ) {
-            return NextResponse.json(
-                { error: "Category name already exists" },
-                { status: 409 }
-            );
-        }
-
         return NextResponse.json(
             { error: "Failed to create category" },
             { status: 500 }
