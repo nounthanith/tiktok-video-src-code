@@ -2,6 +2,8 @@ import CategoryForm from "../components/CreateCate";
 import { ICategory } from "../types/category.type";
 import { getCategory } from "./category/action";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const data = await getCategory();
 
